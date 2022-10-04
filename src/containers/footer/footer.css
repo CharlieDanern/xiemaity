@@ -1,0 +1,123 @@
+.nk__footer {
+   display: flex;
+   color: white;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: var(--footer-color);
+   padding: 0.5rem 6rem;
+}
+
+.nk__footer-links {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   flex-direction: row;
+   width: 100%;
+   text-align: left;
+}
+
+.nk__footer-links div {
+   width: 260px;
+   margin: 0rem;
+}
+
+.nk__footer-links_logo {
+   display: flex;
+   flex-direction: row;
+}
+
+.nk__footer-links_logo img {
+   width: 80px;
+   height: 80px;
+}
+
+.nk__footer-links_logo p {
+   font-family: var(--font-family);
+   font-size: 12px;
+   line-height: 14px;
+   color: white;
+   margin-top: 2.5rem;
+}
+
+.nk__footer-links_div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.nk__footer-links_div h4 {
+   font-family: var(--font-family);
+   font-size: 13px;
+   line-height: 14px;
+   color: white;
+   margin-top: 1rem;
+   margin-bottom: 0.5rem;
+}
+
+.nk__footer-links_div p {
+   font-family: var(--font-family);
+   font-size: 11px;
+   line-height: 10px;
+   color: white;
+   margin: 0rem 0rem;
+
+   font-weight: 100;
+}
+
+.nk__footer-copyright {
+   margin-bottom: 0.5rem;
+   text-align: center;
+   width: 100%;
+}
+
+.nk__footer-copyright p {
+   font-family: var(--font-family);
+   font-size: 12px;
+   line-height: 14px;
+   color: white;
+   margin: 0rem 0.5rem;
+}
+
+/*  */
+
+@media screen and (max-width: 850px) {
+   .nk__footer {
+      font-size: 44px;
+      line-height: 50px;
+      padding: 0rem 3rem;
+      margin-bottom: 0.5rem;
+   }
+
+   .nk__footer-links div {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      width: 40%;
+      margin-left: 0.5rem;
+   }
+}
+
+@media screen and (max-width: 550px) {
+   .nk__footer {
+      font-size: 34px;
+      line-height: 42px;
+   }
+
+   .nk__footer-links div {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .nk__footer {
+      font-size: 27px;
+      line-height: 38px;
+   }
+
+   .nk__footer-links div {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+   }
+}
