@@ -59,15 +59,6 @@ const AutoStow = ({ setUploadedFile }) => {
                <button className="btn">Submit</button>
             </form>
          </div>
-         <div className="autostow_result">
-            <form className="autostow_text" onSubmit={onSubmit}>
-               <label className="autostow_label">
-                  <p>Desired Score</p>
-                  <input type="number" step="0.1" onChange={onChange}></input>
-                  <button className="autostow_button">Let's gooooooooo</button>
-               </label>
-            </form>
-         </div>
       </div>
    );
 };

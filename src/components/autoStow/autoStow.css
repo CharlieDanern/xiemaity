@@ -1,0 +1,90 @@
+.autostow_header {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin: 0rem 5.5rem;
+}
+
+.autostow_header h1 {
+   font-family: var(--font-family);
+   font-weight: 200;
+   font-size: 32px;
+   line-height: 75px;
+   letter-spacing: -0.04em;
+}
+
+.autoStow {
+   margin: 0.5rem 0rem;
+   display: flex;
+   flex-direction: column;
+   padding: 1rem;
+   justify-content: space-between;
+   width: 250px;
+   min-height: 200px;
+   border: #bd905a dashed 1.5px;
+   border-radius: 1rem;
+   align-items: center;
+}
+
+.autoStow input {
+   position: relative;
+   text-align: right;
+   display: none;
+   z-index: 2;
+   cursor: pointer;
+   height: 46px;
+   max-width: 200px;
+}
+
+.autoStow h4 {
+   color: white;
+   font-family: var(--font-family);
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 20px;
+}
+.autoStow p {
+   color: white;
+   font-family: var(--font-family);
+   font-weight: 100;
+   font-size: 12px;
+   line-height: 20px;
+}
+
+.btn {
+   padding: 0.5rem 1rem;
+   background: #bd905a;
+   border-radius: 10px;
+   border: 0;
+   color: #fff;
+   font-family: var(--font-family);
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 20px;
+   cursor: pointer;
+   box-shadow: 0px 0px 24px rgba(149, 157, 165, 0.5);
+   transition: background-color 0.4s;
+}
+
+.btn:hover,
+.label_as_btn:hover {
+   background-color: #b38043;
+}
+.label_as_btn {
+   margin-top: 0rem;
+   padding: 0.5rem 1rem;
+   background: #bd905a;
+   border-radius: 10px;
+   border: 0;
+   cursor: pointer;
+   transition: background-color 0.4s;
+}
+
+.label_as_btn p {
+   color: #fff;
+   font-family: var(--font-family);
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 20px;
+}
