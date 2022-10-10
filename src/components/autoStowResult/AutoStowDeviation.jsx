@@ -24,39 +24,41 @@ const AutoStowDeviation = ({ finale }) => {
 
    return (
       <div className="Deviation_Table">
-         <h4>DEVIATION</h4>
          {loadingBool ? (
             <Loading />
          ) : (
-            <table className="table" {...getTableProps()}>
-               <thead className="thead">
-                  {headerGroups.map((headerGroup) => (
-                     <tr className="tr" {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map((column) => (
-                           <th className="th" {...column.getHeaderProps()}>
-                              {column.render("Header")}
-                           </th>
-                        ))}
-                     </tr>
-                  ))}
-               </thead>
-               <tbody className="tbody" {...getTableBodyProps()}>
-                  {rows.map((row) => {
-                     prepareRow(row);
-                     return (
-                        <tr className="tr" {...row.getRowProps()}>
-                           {row.cells.map((cell) => {
-                              return (
-                                 <td className="td" {...cell.getCellProps()}>
-                                    {cell.render("Cell")}
-                                 </td>
-                              );
-                           })}
+            <div className="Deviation_Table">
+               <h4>DEVIATION</h4>
+               <table className="table" {...getTableProps()}>
+                  <thead className="thead">
+                     {headerGroups.map((headerGroup) => (
+                        <tr className="tr" {...headerGroup.getHeaderGroupProps()}>
+                           {headerGroup.headers.map((column) => (
+                              <th className="th" {...column.getHeaderProps()}>
+                                 {column.render("Header")}
+                              </th>
+                           ))}
                         </tr>
-                     );
-                  })}
-               </tbody>
-            </table>
+                     ))}
+                  </thead>
+                  <tbody className="tbody" {...getTableBodyProps()}>
+                     {rows.map((row) => {
+                        prepareRow(row);
+                        return (
+                           <tr className="tr" {...row.getRowProps()}>
+                              {row.cells.map((cell) => {
+                                 return (
+                                    <td className="td" {...cell.getCellProps()}>
+                                       {cell.render("Cell")}
+                                    </td>
+                                 );
+                              })}
+                           </tr>
+                        );
+                     })}
+                  </tbody>
+               </table>
+            </div>
          )}
       </div>
    );

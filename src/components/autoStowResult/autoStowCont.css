@@ -18,7 +18,7 @@
    letter-spacing: 0.14em;
 }
 
-.autoStow_Cont_Table {
+.autostow_cont_table {
    display: flex;
    justify-content: center;
    flex-direction: column;

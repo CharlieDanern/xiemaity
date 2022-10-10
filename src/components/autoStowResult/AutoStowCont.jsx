@@ -29,19 +29,18 @@ const AutoStowCont = ({ finale }) => {
 
    return (
       <div className="autoStow_Cont">
-         <h4>CONTAINER LIST</h4>
          {loadingBool ? (
             <Loading />
          ) : (
-            <div autoStow_Cont_Table>
+            <div className="autostow_cont_table">
+               <h4>CONTAINER LIST</h4>
                {data.map((bay) => {
                   const containerNo = bay.Value.map((cont, i) => {
                      return i !== 0 ? " " + cont : cont;
                   });
-
                   return (
-                     <div className="Cont_form">
-                        <form key={bay.ID}>
+                     <div className="Cont_form" key={bay.ID}>
+                        <form>
                            <label>{bay.ID}</label>
                            <input type="text" defaultValue={containerNo}></input>
                            <CopyToClipboard text={containerNo} onCopy={onCopy}>
