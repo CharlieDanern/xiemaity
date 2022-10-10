@@ -13,7 +13,9 @@ const Header = () => {
                to anyone who needs it!
             </p>
             <div className="nk__header-content__getStarted">
-               <button type="button">Get Started</button>
+               <a href="tools">
+                  <button type="button">Get Started</button>
+               </a>
             </div>
          </div>
          <div className="nk__header-image">

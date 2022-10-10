@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "./autoStowResult.css";
-import Loading from "./Loading";
+import "./defaultData";
+import { defaultData } from "./defaultData";
+import { defaultCont } from "./defaultCont";
 
-const AutoStowResult = ({ uploadedFile }) => {
-   const [result, setResult] = useState(null);
-   const [devi, setDevi] = useState(null);
+const AutoStowResult = ({ uploadedFile, setFinale }) => {
+   // const [result, setResult] = useState(null);
+   // const [devi, setDevi] = useState(null);
    const [score, setScore] = useState(3);
    const onChange = (e) => {
       setScore(e.target.value);
@@ -14,18 +16,19 @@ const AutoStowResult = ({ uploadedFile }) => {
       e.preventDefault();
 
       try {
+         setFinale({ devi: defaultData, finalResult: defaultCont });
          const fileName = uploadedFile.fileName;
-         console.log(fileName);
-         console.log(score);
 
          const res = await axios.post("/autostow/result", {
             fileName: fileName,
             score: score,
          });
 
-         setResult(res.data.finalResult);
-         setDevi(res.data.devi);
-         console.log(res.data);
+         // setResult(res.data.finalResult);
+         // setDevi(res.data.devi);
+
+         setFinale({ finalResult: res.data.finalResult, devi: res.data.devi });
+         console.log(res.data.devi);
       } catch (error) {
          console.log(error);
       }
@@ -34,44 +37,12 @@ const AutoStowResult = ({ uploadedFile }) => {
    return (
       <>
          <div className="autostow_result">
+            <h4>Desired Score</h4>
             <form className="autostow_text" onSubmit={onSubmit}>
-               <label className="autostow_label">
-                  <p>Desired Score</p>
-                  <input type="number" step="0.1" onChange={onChange}></input>
-                  <button className="autostow_button">Let's gooooooooo</button>
-               </label>
+               <input type="number" step="0.1" max="8" onChange={onChange}></input>
+               <button className="autostow_button">Let's gooooooooo</button>
             </form>
-         </div>
-         <div className="autostow_result_boxes">
-            {result ? (
-               <>
-                  <h3>Below is your result: </h3>
-                  <h4>
-                     Deviation:
-                     {Object.keys(devi).map((e, i) => {
-                        return (
-                           <>
-                              <p key={Object.keys(devi)[i]}>{Object.keys(devi)[i]}</p>
-                              <p>{devi[e].join(", ")}</p>
-                           </>
-                        );
-                     })}
-                  </h4>
-                  <h4>
-                     Container Number:
-                     {Object.keys(result).map((e, i) => {
-                        return (
-                           <>
-                              <p key={Object.keys(result)[i]}>{Object.keys(result)[i]}</p>
-                              <p>{result[e].join(", ")}</p>
-                           </>
-                        );
-                     })}
-                  </h4>
-               </>
-            ) : (
-               <Loading />
-            )}
+            {/* <label className="autostow_label"></label> */}
          </div>
       </>
    );

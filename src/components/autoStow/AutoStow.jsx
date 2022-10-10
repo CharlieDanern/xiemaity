@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import Message from "./Message";
+// import Message from "./Message";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./autoStow.css";
 
 import axios from "axios";
@@ -13,6 +15,7 @@ const AutoStow = ({ setUploadedFile }) => {
    const [name, setName] = useState("Choose File");
 
    const [message, setMessage] = useState(null);
+   console.log(message);
 
    const onChange = (e) => {
       setFile(e.target.files[0]);
@@ -34,6 +37,19 @@ const AutoStow = ({ setUploadedFile }) => {
          setUploadedFile({ msg, fileName });
          setMessage(msg);
 
+         const notify = () =>
+            toast.success(msg, {
+               position: "top-right",
+               autoClose: 2000,
+               hideProgressBar: false,
+               closeOnClick: true,
+               pauseOnHover: true,
+               draggable: true,
+               progress: undefined,
+               theme: "light",
+            });
+         notify();
+
          console.log({ msg, fileName });
       } catch (error) {
          if (error.response.status === 500) {
@@ -44,30 +60,26 @@ const AutoStow = ({ setUploadedFile }) => {
          console.log(error);
       }
    };
+
    return (
       <div className="autostow_header">
-         <h1 className="gradient__textt">Vessel Automation Tool</h1>
          <div className="autoStow">
-            {message ? <Message msg={message} /> : null}
             <h4>File Upload</h4>
-            <input type="file" id="fileUpload" onChange={onChange} />
+            <input
+               type="file"
+               id="fileUpload"
+               accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+               onChange={onChange}
+            />
             <label className="label_as_btn" htmlFor="fileUpload">
                <p>{name}</p>
             </label>
-            <p>Supported Files: .xlsx</p>
+            <p>Currently only Supported Files: .xlsx</p>
             <form className="autoStow_submit" onSubmit={onSubmit}>
                <button className="btn">Submit</button>
             </form>
          </div>
-         <div className="autostow_result">
-            <form className="autostow_text" onSubmit={onSubmit}>
-               <label className="autostow_label">
-                  <p>Desired Score</p>
-                  <input type="number" step="0.1" onChange={onChange}></input>
-                  <button className="autostow_button">Let's gooooooooo</button>
-               </label>
-            </form>
-         </div>
+         <ToastContainer />
       </div>
    );
 };

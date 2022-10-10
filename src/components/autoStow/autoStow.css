@@ -1,9 +1,7 @@
 .autostow_header {
-   flex: 1;
    display: flex;
    justify-content: center;
    flex-direction: column;
-   margin: 0rem 5.5rem;
 }
 
 .autostow_header h1 {
@@ -18,10 +16,10 @@
    margin: 0.5rem 0rem;
    display: flex;
    flex-direction: column;
-   padding: 1rem;
+   padding: 2rem;
    justify-content: space-between;
    width: 250px;
-   min-height: 200px;
+   min-height: 360px;
    border: #bd905a dashed 1.5px;
    border-radius: 1rem;
    align-items: center;
@@ -40,16 +38,17 @@
 .autoStow h4 {
    color: white;
    font-family: var(--font-family);
-   font-weight: 300;
-   font-size: 18px;
+   font-weight: 100;
+   font-size: 22px;
    line-height: 20px;
 }
 .autoStow p {
    color: white;
    font-family: var(--font-family);
    font-weight: 100;
-   font-size: 12px;
+   font-size: 13px;
    line-height: 20px;
+   text-align: center;
 }
 
 .btn {
@@ -65,6 +64,7 @@
    cursor: pointer;
    box-shadow: 0px 0px 24px rgba(149, 157, 165, 0.5);
    transition: background-color 0.4s;
+   min-width: 180px;
 }
 
 .btn:hover,
@@ -72,13 +72,14 @@
    background-color: #b38043;
 }
 .label_as_btn {
-   margin-top: 0rem;
    padding: 0.5rem 1rem;
    background: #bd905a;
    border-radius: 10px;
    border: 0;
+   min-width: 180px;
    cursor: pointer;
    transition: background-color 0.4s;
+   align-items: center;
 }
 
 .label_as_btn p {
@@ -87,4 +88,5 @@
    font-weight: 300;
    font-size: 18px;
    line-height: 20px;
+   text-align: center;
 }
