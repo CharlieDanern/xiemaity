@@ -27,8 +27,10 @@ const AutoStow = ({ setUploadedFile }) => {
       const formData = new FormData();
       formData.append("file", file);
 
+      const url = "http://13.212.171.153:4000/autostow/upload";
+
       try {
-         const res = await axios.post("/autostow/upload", formData, {
+         const res = await axios.post(url, formData, {
             headers: {
                "Content-Type": "multipart/form-data",
             },
