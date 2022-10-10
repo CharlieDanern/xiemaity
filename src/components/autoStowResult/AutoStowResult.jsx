@@ -19,7 +19,7 @@ const AutoStowResult = ({ uploadedFile, setFinale }) => {
          setFinale({ devi: defaultData, finalResult: defaultCont });
          const fileName = uploadedFile.fileName;
 
-         const url = "http://13.212.171.153:4000/autostow/result";
+         const url = "http://13.212.171.153:8080/autostow/result";
 
          const res = await axios.post(url, {
             fileName: fileName,
