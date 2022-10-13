@@ -2,7 +2,7 @@
    "name": "client",
    "version": "0.1.0",
    "private": true,
-   "proxy": "https://api.xiemaity.com/autostow/",
+   "proxy": "https://api.xiemaity.com/",
    "dependencies": {
       "@fortawesome/fontawesome-svg-core": "^6.2.0",
       "@fortawesome/free-regular-svg-icons": "^6.2.0",
