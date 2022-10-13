@@ -20,7 +20,7 @@ const AutoStowResult = ({ uploadedFile, setFinale }) => {
          const fileName = uploadedFile.fileName;
 
          // const url = "http://13.212.171.153:8080/autostow/result";
-         const url = "https://xiemaity.herokuapp.com/autostow/result";
+         const url = "https://api.xiemaity.com/autostow/result";
 
          const res = await axios.post(url, {
             fileName: fileName,

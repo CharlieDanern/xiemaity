@@ -28,7 +28,7 @@ const AutoStow = ({ setUploadedFile }) => {
       formData.append("file", file);
 
       // const url = "http://13.212.171.153:8080/autostow/upload";
-      const url = "https://xiemaity.herokuapp.com/autostow/upload";
+      const url = "https://api.xiemaity.com/autostow/upload";
 
       try {
          const res = await axios.post(url, formData, {
