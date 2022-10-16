@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AutoStowCont = ({ secondary }) => {
    const data = useMemo(() => [...secondary], [secondary]);
-   console.log(secondary);
 
    const loadingBool = data[0]["ID"] === "00";
    const onCopy = () => {
