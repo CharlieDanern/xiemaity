@@ -81,3 +81,12 @@
 .tbody {
    font-weight: 200;
 }
+
+.Hidden {
+   margin: 1rem 1rem;
+   font-family: var(--font-family);
+   font-weight: 200;
+   font-size: 25px;
+   line-height: 75px;
+   letter-spacing: 0.02em;
+}

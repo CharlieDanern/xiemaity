@@ -5,11 +5,9 @@ import Loading from "./Loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const AutoStowCont = ({ finale }) => {
-   const data = useMemo(() => [...finale], [finale]);
-   // const data = finale;
-   console.log("data is:");
-   console.log(data);
+const AutoStowCont = ({ secondary }) => {
+   const data = useMemo(() => [...secondary], [secondary]);
+   console.log(secondary);
 
    const loadingBool = data[0]["ID"] === "00";
    const onCopy = () => {

@@ -15,7 +15,6 @@ const AutoStow = ({ setUploadedFile }) => {
    const [name, setName] = useState("Choose File");
 
    const [message, setMessage] = useState(null);
-   console.log(message);
 
    const onChange = (e) => {
       setFile(e.target.files[0]);
@@ -27,7 +26,7 @@ const AutoStow = ({ setUploadedFile }) => {
       const formData = new FormData();
       formData.append("file", file);
 
-      // const url = "http://13.212.171.153:8080/autostow/upload";
+      // const url = "http://localhost:4000/autostow/upload";
       const url = "https://api.xiemaity.com/autostow/upload";
 
       try {
@@ -39,19 +38,10 @@ const AutoStow = ({ setUploadedFile }) => {
          const { msg, fileName } = res.data;
          setUploadedFile({ msg, fileName });
          setMessage(msg);
-
-         const notify = () =>
-            toast.success(msg, {
-               position: "top-right",
-               autoClose: 2000,
-               hideProgressBar: false,
-               closeOnClick: true,
-               pauseOnHover: true,
-               draggable: true,
-               progress: undefined,
-               theme: "light",
-            });
-         notify();
+         // console.log(msg);
+         // if (message.msg === "File Uploaded Successfully") {
+         //    notify();
+         // }
 
          console.log({ msg, fileName });
       } catch (error) {
@@ -63,6 +53,22 @@ const AutoStow = ({ setUploadedFile }) => {
          console.log(error);
       }
    };
+   const notify = (msg) =>
+      toast.success(msg, {
+         position: "top-right",
+         autoClose: 2000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+         progress: undefined,
+         theme: "light",
+      });
+
+   if (message === "File Uploaded Successfully") {
+      notify(message);
+      setMessage(null);
+   }
 
    return (
       <div className="autostow_header">
